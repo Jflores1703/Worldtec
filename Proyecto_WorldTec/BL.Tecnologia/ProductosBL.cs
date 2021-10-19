@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BL.Tecnologia
 {
-   public class ProductosBL
+    public class ProductosBL
     {
         public BindingList<Producto> ListaProducto { get; set; }
 
@@ -57,13 +57,19 @@ namespace BL.Tecnologia
         {
             return ListaProducto;
         }
-        public bool GuardarProducto(Producto producto)
+        public Resultado GuardarProducto(Producto producto)
         {
+            var resultado = Validar(producto);
+            if (resultado.Exitoso==false) {
+                return resultado;
+            }
             if (producto.Id == 0)
             {
                 producto.Id = ListaProducto.Max(item => item.Id) + 1;
             }
-            return true;
+
+            resultado.Exitoso = true;
+            return resultado;
         }
         public void AgregarProducto()
         {
@@ -72,7 +78,7 @@ namespace BL.Tecnologia
 
         }
 
-        public bool EliminarProducto( int id)
+        public bool EliminarProducto(int id)
         {
             foreach (var producto in ListaProducto)
             {
@@ -85,18 +91,47 @@ namespace BL.Tecnologia
             }
             return false;
         }
-        
-    public class Producto
-    {
+
+        private Resultado Validar(Producto producto)
+        {
+            var resultado = new Resultado();
+            resultado.Exitoso = true;
+            if (string.IsNullOrEmpty(producto.Descripcion)==true)
+            {
+                resultado.Mensaje = "Ingrese una descripción";
+                resultado.Exitoso = false;
+            }
+            if (producto.Existencia <= 0)
+            {
+                resultado.Mensaje = "La exitencia debe ser mayor que cero";
+                resultado.Exitoso = false;
+            }
+            if (producto.Precio <= 0)
+            {
+                resultado.Mensaje = "El precio debe ser mayor que cero";
+                resultado.Exitoso = false;
+            }
+            return resultado;
+        }
+        public class Producto
+        {
             public int Id { get; set; }
             public string Descripcion { get; set; }
             public double Precio { get; set; }
             public int Existencia { get; set; }
             public bool Activo { get; set; }
+
+        }
+
+        public class Resultado
+        {
+            public bool Exitoso { get; set; }
+            public string Mensaje { get; set; }
         }
 
         
     }
+
 }
 
 

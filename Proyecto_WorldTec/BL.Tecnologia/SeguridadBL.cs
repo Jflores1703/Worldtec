@@ -10,7 +10,7 @@ namespace BL.Tecnologia
     {
        public bool Autorizar( string usuario, string contrasena)
         {
-            if (usuario == "Admin21" && contrasena == "unahvs" || (usuario == "Jonathan Sandoval" && contrasena == "jona123") || (usuario == "Carlos Fernandez" && contrasena == "carlos123"))
+            if (usuario == "admin" && contrasena == "admin")
             {
                 return true;
             }
