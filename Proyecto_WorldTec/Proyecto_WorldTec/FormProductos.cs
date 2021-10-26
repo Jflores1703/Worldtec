@@ -438,6 +438,7 @@ namespace Proyecto_WorldTec
             {   
                 listaProductoBindingSource.ResetBindings(false);
                 DeshabilitarHabilitarBotones(true);
+                MessageBox.Show("Registro Guardado Exitosamente");
             }
             else
             {
@@ -463,6 +464,7 @@ namespace Proyecto_WorldTec
             bindingNavigatorAddNewItem.Enabled = valor;
             bindingNavigatorDeleteItem.Enabled = valor;
             toolStripButtonCancelar.Visible = !valor;
+            productosBL_ProductoDataGridView.Enabled = valor;
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)

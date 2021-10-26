@@ -1,21 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BL.Tecnologia
 {
     public class ProductosBL
     {
-        public BindingList<Producto> ListaProducto { get; set; }
+        Contexto _contexto;
+        public BindingList<Producto> ListaProductos { get; set; }
 
         public ProductosBL()
         {
-
-            ListaProducto = new BindingList<Producto>();
-
+            //Se instancia la variable _contexto en del tipo Contexto
+            _contexto = new Contexto();
+            ListaProductos = new BindingList<Producto>();
+            {/*
+             * Eliminamos los datos de prueba 
+             * 
             var producto1 = new Producto();
             producto1.Id = 1;
             producto1.Descripcion = "Monitor LCD";
@@ -50,12 +51,15 @@ namespace BL.Tecnologia
             producto4.Existencia = 15;
             producto4.Activo = true;
 
-            ListaProducto.Add(producto4);
+            ListaProducto.Add(producto4);*/
+            }
         }
 
         public BindingList<Producto> ObtenerProducto()
-        {
-            return ListaProducto;
+        {   
+            _contexto.Productos.Load();
+            ListaProductos = _contexto.Productos.Local.ToBindingList();
+            return ListaProductos;
         }
         public Resultado GuardarProducto(Producto producto)
         {
@@ -63,10 +67,8 @@ namespace BL.Tecnologia
             if (resultado.Exitoso==false) {
                 return resultado;
             }
-            if (producto.Id == 0)
-            {
-                producto.Id = ListaProducto.Max(item => item.Id) + 1;
-            }
+
+            _contexto.SaveChanges();
 
             resultado.Exitoso = true;
             return resultado;
@@ -74,17 +76,18 @@ namespace BL.Tecnologia
         public void AgregarProducto()
         {
             var NuevoProducto = new Producto();
-            ListaProducto.Add(NuevoProducto);
+            ListaProductos.Add(NuevoProducto);
 
         }
 
         public bool EliminarProducto(int id)
         {
-            foreach (var producto in ListaProducto)
+            foreach (var producto in ListaProductos)
             {
                 if (producto.Id == id)
                 {
-                    ListaProducto.Remove(producto);
+                    ListaProductos.Remove(producto);
+                    _contexto.SaveChanges();
                     return true;
 
                 }

@@ -70,6 +70,7 @@
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(181, 20);
             this.textBox2.TabIndex = 13;
+            this.textBox2.Text = "admin";
             // 
             // label2
             // 
@@ -98,6 +99,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(181, 20);
             this.textBox1.TabIndex = 10;
+            this.textBox1.Text = "admin";
             // 
             // label1
             // 
