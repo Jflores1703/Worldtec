@@ -20,7 +20,6 @@ namespace Proyecto_WorldTec
             _seguridad = new SeguridadBL();
            
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -48,7 +47,6 @@ namespace Proyecto_WorldTec
                 MessageBox.Show("Usuario o Contraseña incorrecta");
                 textBox1.Text = "";
                 textBox2.Text = "";
-
             }
         }
 

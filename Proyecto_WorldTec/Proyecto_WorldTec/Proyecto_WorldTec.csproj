@@ -74,12 +74,6 @@
     <Compile Include="FormLogin.designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormMenu.designer.cs">
-      <DependentUpon>FormMenu.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +85,12 @@
     </Compile>
     <Compile Include="FormReporteVentas.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRoundMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRoundMenu.designer.cs">
+      <DependentUpon>FormRoundMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUsuarios.cs">
       <SubType>Form</SubType>
@@ -106,9 +106,6 @@
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMenu.resx">
-      <DependentUpon>FormMenu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormReporteVentas.resx">
       <DependentUpon>FormReporteVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRoundMenu.resx">
+      <DependentUpon>FormRoundMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUsuarios.resx">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
@@ -134,6 +134,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\BL.Tecnologia.CategoriasBL.datasource" />
     <None Include="Properties\DataSources\BL.Tecnologia.ProductosBL+Producto.datasource" />
     <None Include="Properties\DataSources\BL.Tecnologia.ProductosBL.datasource" />
     <None Include="Properties\DataSources\BL.Tecnologia.SeguridadBL.datasource" />
