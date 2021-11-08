@@ -45,6 +45,7 @@ namespace Proyecto_WorldTec
         private OpenFileDialog openFileDialog1;
         private BindingSource listaCategoriasBindingSource;
         private ComboBox categoriaIdComboBox;
+        private Button BtnCerrar;
         private TextBox precioTextBox;
 
         public FormProductos()
@@ -66,8 +67,8 @@ namespace Proyecto_WorldTec
             System.Windows.Forms.Label existenciaLabel;
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label precioLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProductos));
             System.Windows.Forms.Label categoriaIdLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProductos));
             this.listaProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaProductoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -100,6 +101,7 @@ namespace Proyecto_WorldTec
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.listaCategoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriaIdComboBox = new System.Windows.Forms.ComboBox();
+            this.BtnCerrar = new System.Windows.Forms.Button();
             activoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             existenciaLabel = new System.Windows.Forms.Label();
@@ -117,7 +119,7 @@ namespace Proyecto_WorldTec
             // activoLabel
             // 
             activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(229, 46);
+            activoLabel.Location = new System.Drawing.Point(224, 92);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 1;
@@ -126,7 +128,7 @@ namespace Proyecto_WorldTec
             // descripcionLabel
             // 
             descripcionLabel.AutoSize = true;
-            descripcionLabel.Location = new System.Drawing.Point(30, 100);
+            descripcionLabel.Location = new System.Drawing.Point(25, 146);
             descripcionLabel.Name = "descripcionLabel";
             descripcionLabel.Size = new System.Drawing.Size(66, 13);
             descripcionLabel.TabIndex = 3;
@@ -135,7 +137,7 @@ namespace Proyecto_WorldTec
             // existenciaLabel
             // 
             existenciaLabel.AutoSize = true;
-            existenciaLabel.Location = new System.Drawing.Point(30, 126);
+            existenciaLabel.Location = new System.Drawing.Point(25, 172);
             existenciaLabel.Name = "existenciaLabel";
             existenciaLabel.Size = new System.Drawing.Size(58, 13);
             existenciaLabel.TabIndex = 5;
@@ -144,7 +146,7 @@ namespace Proyecto_WorldTec
             // idLabel
             // 
             idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(30, 46);
+            idLabel.Location = new System.Drawing.Point(25, 92);
             idLabel.Name = "idLabel";
             idLabel.Size = new System.Drawing.Size(19, 13);
             idLabel.TabIndex = 7;
@@ -153,11 +155,20 @@ namespace Proyecto_WorldTec
             // precioLabel
             // 
             precioLabel.AutoSize = true;
-            precioLabel.Location = new System.Drawing.Point(30, 152);
+            precioLabel.Location = new System.Drawing.Point(25, 198);
             precioLabel.Name = "precioLabel";
             precioLabel.Size = new System.Drawing.Size(40, 13);
             precioLabel.TabIndex = 9;
             precioLabel.Text = "Precio:";
+            // 
+            // categoriaIdLabel
+            // 
+            categoriaIdLabel.AutoSize = true;
+            categoriaIdLabel.Location = new System.Drawing.Point(25, 123);
+            categoriaIdLabel.Name = "categoriaIdLabel";
+            categoriaIdLabel.Size = new System.Drawing.Size(67, 13);
+            categoriaIdLabel.TabIndex = 15;
+            categoriaIdLabel.Text = "Categoria Id:";
             // 
             // listaProductoBindingSource
             // 
@@ -169,6 +180,8 @@ namespace Proyecto_WorldTec
             this.listaProductoBindingNavigator.BindingSource = this.listaProductoBindingSource;
             this.listaProductoBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.listaProductoBindingNavigator.DeleteItem = null;
+            this.listaProductoBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
+            this.listaProductoBindingNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.listaProductoBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -183,14 +196,14 @@ namespace Proyecto_WorldTec
             this.bindingNavigatorDeleteItem,
             this.listaProductoBindingNavigatorSaveItem,
             this.toolStripButtonCancelar});
-            this.listaProductoBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.listaProductoBindingNavigator.Location = new System.Drawing.Point(45, 44);
             this.listaProductoBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.listaProductoBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.listaProductoBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.listaProductoBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaProductoBindingNavigator.Name = "listaProductoBindingNavigator";
             this.listaProductoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaProductoBindingNavigator.Size = new System.Drawing.Size(968, 25);
+            this.listaProductoBindingNavigator.Size = new System.Drawing.Size(271, 25);
             this.listaProductoBindingNavigator.TabIndex = 0;
             this.listaProductoBindingNavigator.Text = "bindingNavigator1";
             this.listaProductoBindingNavigator.RefreshItems += new System.EventHandler(this.listaProductoBindingNavigator_RefreshItems);
@@ -306,7 +319,7 @@ namespace Proyecto_WorldTec
             // activoCheckBox
             // 
             this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.listaProductoBindingSource, "Activo", true));
-            this.activoCheckBox.Location = new System.Drawing.Point(301, 41);
+            this.activoCheckBox.Location = new System.Drawing.Point(296, 87);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(38, 24);
             this.activoCheckBox.TabIndex = 2;
@@ -316,7 +329,7 @@ namespace Proyecto_WorldTec
             // descripcionTextBox
             // 
             this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductoBindingSource, "Descripcion", true));
-            this.descripcionTextBox.Location = new System.Drawing.Point(102, 97);
+            this.descripcionTextBox.Location = new System.Drawing.Point(97, 143);
             this.descripcionTextBox.Name = "descripcionTextBox";
             this.descripcionTextBox.Size = new System.Drawing.Size(330, 20);
             this.descripcionTextBox.TabIndex = 4;
@@ -324,27 +337,27 @@ namespace Proyecto_WorldTec
             // existenciaTextBox
             // 
             this.existenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductoBindingSource, "Existencia", true));
-            this.existenciaTextBox.Location = new System.Drawing.Point(102, 123);
+            this.existenciaTextBox.Location = new System.Drawing.Point(97, 169);
             this.existenciaTextBox.Name = "existenciaTextBox";
             this.existenciaTextBox.Size = new System.Drawing.Size(330, 20);
-            this.existenciaTextBox.TabIndex = 6;
+            this.existenciaTextBox.TabIndex = 5;
             // 
             // idTextBox
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductoBindingSource, "Id", true));
-            this.idTextBox.Location = new System.Drawing.Point(102, 43);
+            this.idTextBox.Location = new System.Drawing.Point(97, 89);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.ReadOnly = true;
             this.idTextBox.Size = new System.Drawing.Size(104, 20);
-            this.idTextBox.TabIndex = 8;
+            this.idTextBox.TabIndex = 1;
             // 
             // precioTextBox
             // 
             this.precioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductoBindingSource, "Precio", true));
-            this.precioTextBox.Location = new System.Drawing.Point(102, 149);
+            this.precioTextBox.Location = new System.Drawing.Point(97, 195);
             this.precioTextBox.Name = "precioTextBox";
             this.precioTextBox.Size = new System.Drawing.Size(330, 20);
-            this.precioTextBox.TabIndex = 10;
+            this.precioTextBox.TabIndex = 6;
             // 
             // productosBL_ProductoDataGridView
             // 
@@ -358,7 +371,7 @@ namespace Proyecto_WorldTec
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewCheckBoxColumn1});
             this.productosBL_ProductoDataGridView.DataSource = this.listaProductoBindingSource;
-            this.productosBL_ProductoDataGridView.Location = new System.Drawing.Point(21, 180);
+            this.productosBL_ProductoDataGridView.Location = new System.Drawing.Point(16, 226);
             this.productosBL_ProductoDataGridView.Name = "productosBL_ProductoDataGridView";
             this.productosBL_ProductoDataGridView.ReadOnly = true;
             this.productosBL_ProductoDataGridView.Size = new System.Drawing.Size(542, 220);
@@ -403,7 +416,7 @@ namespace Proyecto_WorldTec
             // 
             this.fotoPictureBox.BackColor = System.Drawing.Color.Silver;
             this.fotoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.listaProductoBindingSource, "Foto", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.fotoPictureBox.Location = new System.Drawing.Point(438, 28);
+            this.fotoPictureBox.Location = new System.Drawing.Point(433, 74);
             this.fotoPictureBox.Name = "fotoPictureBox";
             this.fotoPictureBox.Size = new System.Drawing.Size(125, 118);
             this.fotoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -412,17 +425,17 @@ namespace Proyecto_WorldTec
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(580, 41);
+            this.button1.Location = new System.Drawing.Point(575, 87);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 23);
-            this.button1.TabIndex = 14;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Agregar Foto";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(580, 77);
+            this.button2.Location = new System.Drawing.Point(575, 123);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(103, 23);
             this.button2.TabIndex = 15;
@@ -438,15 +451,6 @@ namespace Proyecto_WorldTec
             // 
             this.listaCategoriasBindingSource.DataSource = typeof(BL.Tecnologia.Categoria);
             // 
-            // categoriaIdLabel
-            // 
-            categoriaIdLabel.AutoSize = true;
-            categoriaIdLabel.Location = new System.Drawing.Point(30, 77);
-            categoriaIdLabel.Name = "categoriaIdLabel";
-            categoriaIdLabel.Size = new System.Drawing.Size(67, 13);
-            categoriaIdLabel.TabIndex = 15;
-            categoriaIdLabel.Text = "Categoria Id:";
-            // 
             // categoriaIdComboBox
             // 
             this.categoriaIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaProductoBindingSource, "CategoriaId", true));
@@ -454,15 +458,31 @@ namespace Proyecto_WorldTec
             this.categoriaIdComboBox.DisplayMember = "Descripcion";
             this.categoriaIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.categoriaIdComboBox.FormattingEnabled = true;
-            this.categoriaIdComboBox.Location = new System.Drawing.Point(103, 74);
+            this.categoriaIdComboBox.Location = new System.Drawing.Point(98, 120);
             this.categoriaIdComboBox.Name = "categoriaIdComboBox";
             this.categoriaIdComboBox.Size = new System.Drawing.Size(236, 21);
-            this.categoriaIdComboBox.TabIndex = 16;
+            this.categoriaIdComboBox.TabIndex = 3;
             this.categoriaIdComboBox.ValueMember = "Id";
+            // 
+            // BtnCerrar
+            // 
+            this.BtnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCerrar.FlatAppearance.BorderSize = 0;
+            this.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCerrar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BtnCerrar.Image = global::Proyecto_WorldTec.Properties.Resources.cerrar;
+            this.BtnCerrar.Location = new System.Drawing.Point(1, -2);
+            this.BtnCerrar.Name = "BtnCerrar";
+            this.BtnCerrar.Size = new System.Drawing.Size(43, 43);
+            this.BtnCerrar.TabIndex = 23;
+            this.BtnCerrar.UseVisualStyleBackColor = true;
+            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
             // FormProductos
             // 
-            this.ClientSize = new System.Drawing.Size(968, 466);
+            this.BackColor = System.Drawing.Color.Tan;
+            this.ClientSize = new System.Drawing.Size(707, 466);
+            this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(categoriaIdLabel);
             this.Controls.Add(this.categoriaIdComboBox);
             this.Controls.Add(this.button2);
@@ -613,6 +633,11 @@ namespace Proyecto_WorldTec
         private void button2_Click(object sender, EventArgs e)
         {
             fotoPictureBox.Image = null;
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

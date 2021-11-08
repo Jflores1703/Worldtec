@@ -62,64 +62,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormClientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormFacturas.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLogin.designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogo.Designer.cs">
+      <DependentUpon>FormLogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuPrincipal.designer.cs">
+      <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormProductos.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormReporteClientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormReporteProductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormReporteVentas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormRoundMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormRoundMenu.designer.cs">
-      <DependentUpon>FormRoundMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormClientes.resx">
-      <DependentUpon>FormClientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormFacturas.resx">
-      <DependentUpon>FormFacturas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuPrincipal.resx">
+      <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormReporteClientes.resx">
-      <DependentUpon>FormReporteClientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormReporteProductos.resx">
-      <DependentUpon>FormReporteProductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormReporteVentas.resx">
-      <DependentUpon>FormReporteVentas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormRoundMenu.resx">
-      <DependentUpon>FormRoundMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUsuarios.resx">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
@@ -132,6 +108,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BL.Tecnologia.CategoriasBL.datasource" />
@@ -156,6 +133,48 @@
       <Project>{089fdddb-bc37-4d88-91dc-bfc19c2ff14c}</Project>
       <Name>BL.Tecnologia</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\target.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\factura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paquete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\configuracion-del-navegador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -40,7 +40,7 @@ namespace Proyecto_WorldTec
             if (resultado == true)
             {
                 MessageBox.Show("Bienvenido al Sistema" + " " + usuario);
-                this.Close();
+                Program.mostrarMenu();
             }
             else if ( resultado == false)
             {
