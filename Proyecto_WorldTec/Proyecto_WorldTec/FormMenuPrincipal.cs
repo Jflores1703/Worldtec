@@ -174,17 +174,19 @@ namespace Proyecto_WorldTec
             MostrarFormLogo();
         }
         //METODOS PARA ABRIR OTROS FORMULARIOS Y MOSTRAR FORM DE LOGO Al CERRAR ----------------------------------------------------------
-        private void button3_Click(object sender, EventArgs e)
+        private void AbrirProductos_Click(object sender, EventArgs e)
         {
             FormProductos fm = new FormProductos();
             fm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
             AbrirFormEnPanel(fm);
         }
-
-        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        private void AbrirFacturas_Click(object sender, EventArgs e)
         {
-
+            FormFactura fm = new FormFactura();
+            fm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
+            AbrirFormEnPanel(fm);
         }
+
 
         //METODO PARA HORA Y FECHA ACTUAL ----------------------------------------------------------
         private void tmFechaHora_Tick(object sender, EventArgs e)

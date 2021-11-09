@@ -60,6 +60,13 @@ namespace BL.Tecnologia
         {
             var resultado = new Resultado();
             resultado.Exitoso = true;
+
+            if (producto == null)
+            {
+                resultado.Mensaje = "Agregue un producto válido";
+                resultado.Exitoso = false;
+                return resultado;
+            }
             if (string.IsNullOrEmpty(producto.Descripcion)==true)
             {
                 resultado.Mensaje = "Ingrese una descripción";
@@ -82,6 +89,12 @@ namespace BL.Tecnologia
             }
             return resultado;
         }
+        public class Resultado
+        {
+            public bool Exitoso { get; set; }
+            public string Mensaje { get; set; }
+        }
+
         public class Producto
         {
             public int Id { get; set; }
@@ -93,16 +106,15 @@ namespace BL.Tecnologia
             public byte[] Foto { get; set; }
             public bool Activo { get; set; }
 
-        }
+            public Producto()
+            {
+                Activo = true;
+            }
 
-        public class Resultado
-        {
-            public bool Exitoso { get; set; }
-            public string Mensaje { get; set; }
         }
-
-        
     }
+
+   
 
 }
 

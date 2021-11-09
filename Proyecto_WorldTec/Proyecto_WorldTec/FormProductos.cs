@@ -45,7 +45,6 @@ namespace Proyecto_WorldTec
         private OpenFileDialog openFileDialog1;
         private BindingSource listaCategoriasBindingSource;
         private ComboBox categoriaIdComboBox;
-        private Button BtnCerrar;
         private TextBox precioTextBox;
 
         public FormProductos()
@@ -101,7 +100,6 @@ namespace Proyecto_WorldTec
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.listaCategoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriaIdComboBox = new System.Windows.Forms.ComboBox();
-            this.BtnCerrar = new System.Windows.Forms.Button();
             activoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             existenciaLabel = new System.Windows.Forms.Label();
@@ -242,7 +240,6 @@ namespace Proyecto_WorldTec
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -464,25 +461,10 @@ namespace Proyecto_WorldTec
             this.categoriaIdComboBox.TabIndex = 3;
             this.categoriaIdComboBox.ValueMember = "Id";
             // 
-            // BtnCerrar
-            // 
-            this.BtnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCerrar.FlatAppearance.BorderSize = 0;
-            this.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCerrar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BtnCerrar.Image = global::Proyecto_WorldTec.Properties.Resources.cerrar;
-            this.BtnCerrar.Location = new System.Drawing.Point(1, -2);
-            this.BtnCerrar.Name = "BtnCerrar";
-            this.BtnCerrar.Size = new System.Drawing.Size(43, 43);
-            this.BtnCerrar.TabIndex = 23;
-            this.BtnCerrar.UseVisualStyleBackColor = true;
-            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
-            // 
             // FormProductos
             // 
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(707, 466);
-            this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(categoriaIdLabel);
             this.Controls.Add(this.categoriaIdComboBox);
             this.Controls.Add(this.button2);
