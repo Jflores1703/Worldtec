@@ -204,7 +204,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(230, 40);
             this.button5.TabIndex = 10;
-            this.button5.Text = "     Configuración";
+            this.button5.Text = "     Reporte Productos";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button5.UseVisualStyleBackColor = true;
@@ -234,10 +234,11 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(230, 40);
             this.button6.TabIndex = 8;
-            this.button6.Text = "     Reportes";
+            this.button6.Text = "     Reportes Facturas";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // pictureBox3
             // 

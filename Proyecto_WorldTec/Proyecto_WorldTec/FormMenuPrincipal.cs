@@ -187,6 +187,13 @@ namespace Proyecto_WorldTec
             AbrirFormEnPanel(fm);
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FormReporteFacturas fm = new FormReporteFacturas();
+            fm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
+            AbrirFormEnPanel(fm);
+        }
+
 
         //METODO PARA HORA Y FECHA ACTUAL ----------------------------------------------------------
         private void tmFechaHora_Tick(object sender, EventArgs e)
@@ -198,7 +205,9 @@ namespace Proyecto_WorldTec
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new FormLogo());
+            FormReporteProductos fm = new FormReporteProductos();
+            fm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
+            AbrirFormEnPanel(fm);
         }
 
         
