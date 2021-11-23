@@ -28,21 +28,31 @@ namespace Proyecto_WorldTec
 
         private void button1_Click(object sender, EventArgs e)
         {
+            _login();
+        }
 
+       private void _login()
+        {
             string usuario;
             string contrasena;
 
             usuario = textBox1.Text;
             contrasena = textBox2.Text;
 
-            var resultado = _seguridad.Autorizar(usuario, contrasena);
-            
-            if (resultado == true)
+            var usuarios = _seguridad.Autorizar(usuario, contrasena);
+            bool _Existe = false;
+            foreach (var usuarioDB in usuarios)
             {
-                MessageBox.Show("Bienvenido al Sistema" + " " + usuario);
-                Program.mostrarMenu();
+                if (usuario == usuarioDB.UsuarioId && contrasena == usuarioDB.Contrasena)
+                {
+                    textBox2.Text = "";
+                    _Existe = true;
+                    Utilidades.UsuarioStatus = usuario;
+                    MessageBox.Show("Bienvenido al Sistema" + " " + usuarioDB.Nombre);
+                    Program.mostrarMenu();
+                }
             }
-            else if ( resultado == false)
+            if(!_Existe)
             {
                 MessageBox.Show("Usuario o Contraseña incorrecta");
                 textBox1.Text = "";
@@ -50,9 +60,20 @@ namespace Proyecto_WorldTec
             }
         }
 
-        private void FormLogin_Load(object sender, EventArgs e)
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar==(char)Keys.Enter && !string.IsNullOrEmpty(textBox1.Text)) 
+            {
+                textBox2.Focus();
+            }
+        }
 
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter && !string.IsNullOrEmpty(textBox2.Text))
+            {
+                _login();
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL.Tecnologia;
+using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -193,6 +194,12 @@ namespace Proyecto_WorldTec
             fm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
             AbrirFormEnPanel(fm);
         }
+
+        private void FormMenuPrincipal_VisibleChanged(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Usuario: "+Utilidades.UsuarioStatus.ToUpper();
+        }
+
 
 
         //METODO PARA HORA Y FECHA ACTUAL ----------------------------------------------------------

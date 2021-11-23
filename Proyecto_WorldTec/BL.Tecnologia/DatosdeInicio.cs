@@ -34,6 +34,20 @@ namespace BL.Tecnologia
             cliente3.RTN = "25672";
             contexto.Clientes.Add(cliente3);
 
+            var usuario = new Usuario();
+            usuario.Nombre = "Josian Flores";
+            usuario.Contrasena = "admin";
+            usuario.UsuarioId = "admin";
+            usuario.Tipo = "admin";
+            contexto.Usuarios.Add(usuario);
+
+            var usuario1 = new Usuario();
+            usuario1.Nombre = "Usuario Normal";
+            usuario1.Contrasena = "user";
+            usuario1.UsuarioId = "user";
+            usuario1.Tipo = "usuario";
+            contexto.Usuarios.Add(usuario1);
+
             base.Seed(contexto);
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Data.Entity;
+using System.Linq;
 
 namespace BL.Tecnologia
 {
@@ -20,6 +21,11 @@ namespace BL.Tecnologia
             _contexto.Productos.Load();
             ListaProductos = _contexto.Productos.Local.ToBindingList();
             return ListaProductos;
+        }
+        public BindingList<Producto> ObtenerProducto(string buscar)
+        {
+            var resultado  = _contexto.Productos.Where(r=>r.Descripcion.ToLower().Contains(buscar.ToLower()));
+            return new BindingList<Producto>(resultado.ToList());
         }
         public Resultado GuardarProducto(Producto producto)
         {

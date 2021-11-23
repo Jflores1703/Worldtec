@@ -45,6 +45,7 @@ namespace Proyecto_WorldTec
         private OpenFileDialog openFileDialog1;
         private BindingSource listaCategoriasBindingSource;
         private ComboBox categoriaIdComboBox;
+        private TextBox textBox1;
         private TextBox precioTextBox;
 
         public FormProductos()
@@ -68,6 +69,7 @@ namespace Proyecto_WorldTec
             System.Windows.Forms.Label precioLabel;
             System.Windows.Forms.Label categoriaIdLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProductos));
+            System.Windows.Forms.Label label1;
             this.listaProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaProductoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -100,12 +102,14 @@ namespace Proyecto_WorldTec
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.listaCategoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriaIdComboBox = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             activoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             existenciaLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             precioLabel = new System.Windows.Forms.Label();
             categoriaIdLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaProductoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaProductoBindingNavigator)).BeginInit();
             this.listaProductoBindingNavigator.SuspendLayout();
@@ -461,10 +465,30 @@ namespace Proyecto_WorldTec
             this.categoriaIdComboBox.TabIndex = 3;
             this.categoriaIdComboBox.ValueMember = "Id";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(433, 44);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(133, 20);
+            this.textBox1.TabIndex = 16;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label1.Location = new System.Drawing.Point(471, 28);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(51, 13);
+            label1.TabIndex = 17;
+            label1.Text = "FILTRO";
+            // 
             // FormProductos
             // 
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(707, 466);
+            this.Controls.Add(label1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(categoriaIdLabel);
             this.Controls.Add(this.categoriaIdComboBox);
             this.Controls.Add(this.button2);
@@ -620,6 +644,20 @@ namespace Proyecto_WorldTec
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string buscar = textBox1.Text;
+            if (string.IsNullOrEmpty(buscar))
+            {
+                listaProductoBindingSource.DataSource = _productos.ObtenerProducto();
+            }
+            else
+            {
+                listaProductoBindingSource.DataSource = _productos.ObtenerProducto(buscar);
+            }
+            listaProductoBindingSource.ResetBindings(false);
         }
     }
 }

@@ -5,24 +5,6 @@ using System.Windows.Forms;
 
 namespace Proyecto_WorldTec
 {
-    public static class Pantallas
-    {
-        public static FormMenuPrincipal frmmenu = new FormMenuPrincipal();
-        public static FormLogin frmlogin = new FormLogin();
-
-        public static void showLogin()
-        {
-            frmlogin.Show();
-            frmmenu.Hide();
-        }
-
-        public static void showMenu()
-        {
-            frmlogin.Hide();
-            frmmenu.Show();
-        }
-
-    }
     static class Program
     {
         /// <summary>
@@ -39,11 +21,11 @@ namespace Proyecto_WorldTec
         }
         public static void mostrarLogin()
         {
-            Pantallas.showLogin();
+            Utilidades.showLogin();
         }
         public static void mostrarMenu()
         {
-            Pantallas.showMenu();
+            Utilidades.showMenu();
         }
         public static byte[] imageToByteArray(Image imageIn)
         {
